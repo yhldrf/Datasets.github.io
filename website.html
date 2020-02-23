@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Real-time  6D object pose estimation</title>
+  <meta name="description" content="Website of a SHREC 2020 challenge: Real-time  6D object pose estimation">
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <section class="content" style="margin-top:5rem; margin-bottom:5rem;">
+      <div class="row">
+        <div class="eight columns">
+          <h2 class="title">Real-time  6D object pose estimation </h2>
+          <h4><a href="http://www.shrec.net/">SHREC 2020</a> Track</h4>
+        </div>
+        <div class="four columns" style="margin-bottom: 5rem;">
+          <img src="images/uu_logo.png" style="height: 100px">
+        </div>
+      </div>
+      <div class="row">
+        <div class="six columns">
+          <h5>Motivation</h5>
+          <p>6D pose estimation is crucial for augmented reality, virtual reality, robotic grasping and manipulation and autonomous navigation.
+             However, the problem is challenging due to the variety of objects in the real world. They have varying 3D shape and  the appearances of captured images from them are affected by sensor noise, changing lighting conditions and occlusions between objects. With the emergence of cheap RGB-D sensors, the precision of 6D object pose estimation is improved for both rich  and low textures objects. Nonetheless,  existing methods have difficulty  to meet the requirement of accurate 6D pose estimation and fast inference simultaneously.</p>
+
+          <h5>Task</h5>
+          <p> In this SHREC track, we propose a task of  6D pose estimate from RGB-D images in real time. We provide  3D datasets which contain RGB-D images,  point clouds of eight objects and ground truth  6D poses. We hope that this will enable researchers to try out different methods.</p>
+
+          <h5>Dataset</h5>
+          <p>To provide participants with as accurate ground truth information as possible, we have created a physically accurate simulator that is able to generate  photot-realistic color-and-depth image pairs.</p>
+          <p>The dataset has eight rich  and low textures objects.  Each object has color-and-depth image pairs  which have a resolution of 1280*720.  The total number of images for each object is 500 (.png). Based on image-based rendering,    we generate 400 photo-realistic synthesized color-and-depth image pairs for training and use the remaining 100 images for testing. The ground truth pose is estimated by structure from motion(SFM). The Figure 1 shows eight objects of the dataset. </p>
+          
+          
+          <a class="button button-primary u-full-width" href="https://drive.google.com/open?id=1OV5AXXxTYw7ok1C64wKVuhfZFhqGa1WL" target="_blank">Download the datasets</a>
+          
+          <h5 style="margin-top:2rem;">Registration</h5>
+          <p>To participate in the track, please <a href="mailto:i.h.yuan@uu.nl?subject=SHREC 6D pose estimation: Registration" target="_blank">send us an email</a>. In it, please confirm your interest in participation and if applicable, please also mention your affiliation and co-authors.</p>
+
+          <h5>Submission</h5>
+          <p>From participants, no later than the deadline mentioned in the schedule, we expect results submitted along with a one-page
+            description of the method used to generate them. Results should be presented as a .txt file containing  three parts:  image names, their estimated 6D pose and speed(ms) per pose.</p>
+
+          <h5>Evaluation</h5>
+          <p>We use two metrics for evaluation.  Given the ground truth  rotation R and   translation T and  estimated rotation R_e and translation T_e, the average distance(ADD) metric  computes the mean distances between each 3D model points transformed by  [R_e|T_e] and [R|T].</p>
+          
+    
+          <p>The average closest point distance (ADD-S) is an ambiguity-invariant pose error metric which takes care of both symmetric and non-symmetric objects into an overall evaluation.</p>
+         
+        </div>
+        <div class="six columns">
+          <img src="images/dataset.png" style="width: 95%">
+          <p><center>Figure 1: Overview of the datasets.</center> </p>
+          
+
+          <h5>Organizers</h5>
+          <p>
+            <ul>
+              <li>Honglin Yuan <sup>1</sup></li>
+              <li>Remco C. Veltkamp <sup>1</sup></li>
+            </ul>
+
+            1: Utrecht University, Department of Information and Computing Sciences<br/>
+            <br/>
+
+            <a class="button button-primary" href="mailto:h.yaun@uu.nl?subject=SHREC 6D pose: Question" target="_blank">Contact us</a>
+          </p>
+
+          <h5>Schedule</h5>
+          <p>The registration and submission deadlines are in AoE (Anywhere on Earth) timezone.</p>
+          <table class="u-full-width">
+            <tbody>
+              <tr>
+                <td>March  20</td>
+                <td>Registration deadline</td>
+              </tr>
+              <tr>
+                <td>March  22</td>
+                <td>Submission deadline of the results</td>
+              </tr>
+              <tr>
+                <td>April 3</td>
+                <td>Track submission to SHREC for review</td>
+              </tr>
+              <tr>
+                <td>May 1</td>
+                <td>Reviews done, first stage decision on acceptance or rejection</td>
+              </tr>
+              <tr>
+                <td>May 22</td>
+                <td>First revision</td>
+              </tr>
+              <tr>
+                <td>May 29</td>
+                <td>Second stage decision on acceptance or rejection</td>
+              </tr>
+              <tr>
+                <td>June 12</td>
+                <td>Second revision</td>
+              </tr>
+              <tr>
+                <td>June 19</td>
+                <td>Final decision on acceptance or rejection.</td>
+              </tr>
+              <tr>
+                <td>September 1</td>
+                <td>Publication online in Computers and Graphics</td>
+              </tr>
+              <tr>
+                <td><b>September 4-5</b></td>
+                <td>Eurographics Workshop on 3D Object Retrieval 2020, featuring SHREC 2020</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="nine columns">
+          <br>
+        </div>
+        <div class="three columns">
+          Website last updated: February 17 2020 13:00 (CET)
+        </div>  
+      </div>
+
+    </section>
+
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
