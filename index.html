@@ -32,7 +32,7 @@
     <section class="content" style="margin-top:5rem; margin-bottom:5rem;">
       <div class="row">
         <div class="eight columns">
-          <h2 class="title"> 6D object pose estimation under low-light conditions </h2>
+          <h2 class="title"> Robust 6D Object Pose Estimation in Low-Light Environments </h2>
           <h4><a href="http://www.shrec.net/"></a> </h4>
         </div>
         <div class="four columns" style="margin-bottom: 5rem;">
@@ -41,9 +41,8 @@
       </div>
       <div class="row">
         <div class="six columns">
-          <h5>Motivation</h5>
-          <p>6D pose estimation is crucial for augmented reality, virtual reality, robotic grasping and manipulation and autonomous navigation.
-             However, the problem is challenging due to the variety of objects in the real world. They have varying 3D shape and  the appearances of captured images from them are affected by sensor noise, changing lighting conditions and occlusions between objects. With the emergence of cheap RGB-D sensors, the precision of 6D object pose estimation is improved for both rich  and low textures objects. Nonetheless,  existing methods have difficulty  to meet the requirement of accurate 6D pose estimation and fast inference simultaneously.</p>
+          <h3>Motivation</h3>
+          <p>6D object pose estimation is essential for applications such as robotics and augmented reality, where accurate spatial understanding of objects is required. However, most existing methods assume well-lit environments and suffer significant performance degradation under low-light conditions due to weak textures, increased noise, and unreliable depth observations. These challenges lead to unstable feature representations and inaccurate pose predictions. Therefore, developing robust pose estimation approaches that remain reliable under low-light conditions is crucial for real-world deployment.</p>
 
           <h5>Task</h5>
           <p> In this benchmark, we propose a task of  6D pose estimate from RGB-D images in real time. We provide  3D datasets which contain RGB-D images,  point clouds of eight objects and ground truth  6D poses. We hope that this will enable researchers to try out different methods.</p>
