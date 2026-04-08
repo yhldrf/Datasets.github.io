@@ -74,13 +74,13 @@
     .image-column img {
       width: 100%;
       height: auto;
-      max-height: 300px;
+      max-height: 350px;
       object-fit: contain;
     }
 
     .center-text {
       text-align: center;
-      font-size: 18px; /* 和正文一样大 */
+      font-size: 18px;
       margin-top: 0.5rem;
       margin-bottom: 1rem;
     }
@@ -88,16 +88,6 @@
     ul {
       margin-left: 1.5rem;
     }
-
-    /* Dataset title 居中 */
-    .dataset-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
   </style>
 </head>
 
@@ -108,8 +98,7 @@
       <h2 class="title">Robust 6D Object Pose Estimation in Low-Light Environments</h2>
       <img src="image/logo.png" class="logo" alt="Logo">
 
-      <!-- Dataset Images -->
-      <h3 class="dataset-title">Dataset</h3>
+      <!-- Images -->
       <div class="image-row">
         <div class="image-column">
           <img src="image/objects.png" alt="20 object models overview">
@@ -138,6 +127,14 @@
         This benchmark proposes a task of 6D pose estimation from RGB-D images in real time.
         We provide datasets containing RGB images, depth maps, segmentation masks, and ground-truth pose annotations.
         Researchers can use these datasets to explore different methods.
+      </p>
+
+      <h5>Dataset</h5>
+      <p>
+        The dataset includes 20 rich and low-texture objects. Images are rendered at $640 \times 480$, 
+        resulting in 60k samples, including low-light and normal-light images. Camera positions are uniformly
+        sampled in a spatial range while pointing to the scene center for visibility. Each frame records
+        RGB, depth, segmentation, and pose. This provides diverse appearance and multi-view geometric observations.
       </p>
 
       <a class="button button-primary button-full"
