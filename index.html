@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <title>6D Object Pose Estimation</title>
   <meta name="description" content="challenge: 6D object pose estimation">
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
-
-  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Fonts -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
-  <!-- Custom Styles -->
   <style>
     body {
       font-family: 'Raleway', sans-serif;
+      font-size: 18px;  /* 正文字体变大 */
+      line-height: 1.7;
     }
     .content {
       margin-top: 5rem;
@@ -31,52 +26,58 @@
       display: block;
       margin: 0 auto 2rem auto;
     }
+    h2.title {
+      text-align: center;
+      font-size: 2.2rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+    }
+    h5 {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
     .button-full {
       width: 100%;
       margin: 1rem 0;
     }
-    .title {
-      text-align: center;
-    }
-    h3, h5 {
-      font-weight: 600;
-      margin-top: 2rem;
-    }
-    h3 {
-      font-size: 1.8rem;
-    }
-    h5 {
-      font-size: 1.3rem;
-    }
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
 
-    /* 图片全宽并自动响应 */
-    .image-full {
+    /* 图片并列布局 */
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1rem 0 2rem 0;
+    }
+    .image-column {
+      flex: 1 1 45%;    /* 桌面端约占45% */
+      min-width: 250px;  /* 移动端最小宽度 */
+    }
+    .image-column img {
       width: 100%;
-      max-width: 800px;
-      display: block;
-      margin: 1rem auto;
       height: auto;
+      max-height: 350px; /* 限制图片高度 */
+      object-fit: contain;
     }
     .center-text {
       text-align: center;
       font-size: 0.9rem;
+      margin-top: 0.5rem;
       margin-bottom: 1rem;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <section class="content">
-      <!-- Header -->
       <h2 class="title">Robust 6D Object Pose Estimation in Low-Light Environments</h2>
       <img src="image/logo.png" class="logo" alt="Logo">
 
-      <!-- Motivation -->
       <h3>Motivation</h3>
       <p>
         6D object pose estimation is essential for applications such as robotics and augmented reality,
@@ -88,7 +89,6 @@
         deployment.
       </p>
 
-      <!-- Task -->
       <h3>Task</h3>
       <p>
         This benchmark proposes a task of 6D pose estimation from RGB-D images in real time.
@@ -96,13 +96,18 @@
         Researchers can use these datasets to explore different methods.
       </p>
 
-      <!-- Dataset Images -->
       <h3>Dataset</h3>
-      <img src="image/objects.png" class="image-full" alt="20 object models overview">
-      <p class="center-text">Figure 1: Our dataset covers object models with diverse challenges.</p>
 
-      <img src="image/sample.png" class="image-full" alt="Dark6D sample images">
-      <p class="center-text">Figure 2: Samples of Dark6D dataset. Corresponding normal-light image on the left.</p>
+      <div class="image-row">
+        <div class="image-column">
+          <img src="image/objects.png" alt="20 object models overview">
+          <p class="center-text">Figure 1: Our dataset covers object models with diverse challenges.</p>
+        </div>
+        <div class="image-column">
+          <img src="image/sample.png" alt="Dark6D sample images">
+          <p class="center-text">Figure 2: Samples of Dark6D dataset. Corresponding normal-light image on the left.</p>
+        </div>
+      </div>
 
       <p>
         The dataset includes 20 rich and low-texture objects. Images are rendered at $640 \times 480$, 
@@ -115,7 +120,6 @@
          href="https://drive.google.com/open?id=1hqU_aUEMv4dQD7hehjm3BYU0CehsiFe5"
          target="_blank">Download the datasets</a>
 
-      <!-- Registration -->
       <h5>Registration</h5>
       <p>
         To participate, please
@@ -124,14 +128,12 @@
         </a> confirming your interest and optionally your affiliation and co-authors.
       </p>
 
-      <!-- Submission -->
       <h5>Submission</h5>
       <p>
         Submit results before the deadline with a one-page description of your method. Results
         should be in a .txt file with image names, estimated 6D poses, and estimation speed (ms per pose).
       </p>
 
-      <!-- Evaluation -->
       <h5>Evaluation</h5>
       <p>
         We use ADD and ADD-S metrics. Given ground truth rotation R and translation T, and estimated
@@ -139,7 +141,6 @@
         by [R_e|T_e] and [R|T]. ADD-S handles symmetry-invariant pose errors.
       </p>
 
-      <!-- Organizers -->
       <h5>Organizers</h5>
       <ul>
         <li>Honglin Yuan <sup>1</sup></li>
@@ -151,7 +152,6 @@
          href="mailto:h.yuan@uu.nl?subject=SHREC 6D pose: Question"
          target="_blank">Contact us</a>
 
-      <!-- Footer -->
       <p class="center-text">Website last updated: March 22 2020 08:00 (CET)</p>
     </section>
   </div>
