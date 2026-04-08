@@ -1,113 +1,171 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs -->
   <meta charset="utf-8">
-  <title> 6D object pose estimation</title>
+  <title>6D Object Pose Estimation</title>
   <meta name="description" content="challenge: 6D object pose estimation">
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Fonts -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
 
-</head>
-<body>
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+    .content {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+    .logo {
+      height: 100px;
+      margin-bottom: 5rem;
+    }
+    .button-full {
+      width: 100%;
+    }
+    .title {
+      text-align: center;
+    }
+    h5 {
+      margin-top: 2rem;
+    }
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    /* 响应式图片并排布局 */
+    .image-row {
+      display: flex;
+      flex-wrap: wrap; /* 移动端自动换行 */
+      gap: 1rem;       /* 图片间距 */
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .image-column {
+      flex: 1 1 45%;   /* 桌面端约占45%，可自适应 */
+      min-width: 300px; /* 移动端最小宽度 */
+    }
+    .image-column img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
   <div class="container">
-    <section class="content" style="margin-top:5rem; margin-bottom:5rem;">
+    <section class="content">
+      <!-- Header -->
       <div class="twelve columns">
-          <h2 class="title" style="text-align:center;">
-           Robust 6D Object Pose Estimation in Low-Light Environments </h2>
-          <h4><a href="http://www.shrec.net/"></a> </h4>
-        </div>
-        <div class="four columns" style="margin-bottom: 5rem;">
-          <img src="image/logo.png" style="height: 100px">
-        </div>
+        <h2 class="title">
+          Robust 6D Object Pose Estimation in Low-Light Environments
+        </h2>
+        <h4>
+          <a href="http://www.shrec.net/"></a>
+        </h4>
       </div>
+
+      <div class="four columns">
+        <img src="image/logo.png" class="logo" alt="Logo">
+      </div>
+
+      <!-- Main Content -->
       <div class="row">
+        <!-- Left Column -->
         <div class="six columns">
           <h3>Motivation</h3>
-          <p>6D object pose estimation is essential for applications such as robotics and augmented reality, where accurate spatial understanding of objects is required. However, most existing methods assume well-lit environments and suffer significant performance degradation under low-light conditions due to weak textures, increased noise, and unreliable depth observations. These challenges lead to unstable feature representations and inaccurate pose predictions. Therefore, developing robust pose estimation approaches that remain reliable under low-light conditions is crucial for real-world deployment.</p>
-
-          <h3>Task</h3>
-          <p> In this benchmark, we propose a task of  6D pose estimate from RGB-D images in real time. We provide  3D datasets which contain RGB-D images,  point clouds of eight objects and ground truth  6D poses. We hope that this will enable researchers to try out different methods.</p>
-
-          <h5>Dataset</h5>
-          <p>To provide participants with as accurate ground truth information as possible, we have created a physically accurate simulator （see Figure 1(a)） that is able to generate  photot-realistic color-and-depth image pairs.</p>
-          <p>The dataset has eight rich  and low textures objects.  Each object has color-and-depth image pairs  which have a resolution of 1280*720.  The total number of images for each object is 500 (.png). Based on image-based rendering,    we generate 400 photo-realistic synthesized color-and-depth image pairs for training and use the remaining 100 images for testing. The ground truth pose(from global to camera coordinates) is estimated by structure from motion(SFM). The Figure 1 shows eight objects of the dataset. </p>
-          
-          
-          <a class="button button-primary u-full-width" href="https://drive.google.com/open?id=1hqU_aUEMv4dQD7hehjm3BYU0CehsiFe5" target="_blank">Download the datasets</a>
-          
-          <h5 style="margin-top:2rem;">Registration</h5>
-          <p>To participate in the track, please <a href="mailto:h.yuan@uu.nl?subject=SHREC 6D pose estimation: Registration" target="_blank">send us an email</a>. In it, please confirm your interest in participation and if applicable, please also mention your affiliation and co-authors.</p>
-
-          <h5>Submission</h5>
-          <p>From participants, no later than the deadline mentioned in the schedule, we expect results submitted along with a one-page
-            description of the method used to generate them. Results should be presented as a .txt file containing  three parts:  image names, their estimated 6D poses and estimation speed(ms) per pose.</p>
-
-          <h5>Evaluation</h5>
-          <p>We use two metrics for evaluation.  Given the ground truth  rotation R and   translation T and  estimated rotation R_e and translation T_e, the average distance(ADD) metric  computes the mean distances between each 3D model points transformed by  [R_e|T_e] and [R|T].</p>
-          
-    
-          <p>The average closest point distance (ADD-S) is an ambiguity-invariant pose error metric which takes care of both symmetric and non-symmetric objects into an overall evaluation.</p>
-         
-        </div>
-        <div class="six columns">
-          <img src="image/dataset.png" style="width: 95%">
-          <p><center>Figure 1: Overview of the datasets.</center> </p>
-          
-
-          <h5>Organizers</h5>
           <p>
-            <ul>
-              <li>Honglin Yuan <sup>1</sup></li>
-              <li>Yuting Zhang <sup>1</sup></li>
-            </ul>
-
-            1: Nanjing University of Information Science and Technology,  School of Computer Science and School of Software<br/>
-            <br/>
-
-            <a class="button button-primary" href="mailto:h.yuan@uu.nl?subject=SHREC 6D pose: Question" target="_blank">Contact us</a>
+            6D object pose estimation is essential for applications such as robotics and augmented reality,
+            where accurate spatial understanding of objects is required. Most existing methods assume
+            well-lit environments and suffer performance degradation under low-light conditions due
+            to weak textures, increased noise, and unreliable depth observations. These challenges lead
+            to unstable feature representations and inaccurate pose predictions. Developing robust pose
+            estimation approaches that remain reliable under low-light conditions is crucial for real-world
+            deployment.
           </p>
 
-          
-        
+          <h3>Task</h3>
+          <p>
+            This benchmark proposes a task of 6D pose estimation from RGB-D images in real time.
+            We provide datasets containing RGB images, depth maps, segmentation masks, and ground-truth pose annotations.
+            Researchers can use these datasets to explore different methods.
+          </p>
 
+          <h5>Dataset</h5>
+          <p>
+            The dataset includes 20 rich and low-texture objects. Images are rendered at $640 \times 480$, 
+            resulting in 60k samples, including low-light and normal-light images. Camera positions are uniformly
+            sampled in a spatial range while pointing to the scene center for visibility. Each frame records
+            RGB, depth, segmentation, and pose. This provides diverse appearance and multi-view geometric observations.
+          </p>
+
+          <a class="button button-primary button-full"
+             href="https://drive.google.com/open?id=1hqU_aUEMv4dQD7hehjm3BYU0CehsiFe5"
+             target="_blank">Download the datasets</a>
+
+          <h5>Registration</h5>
+          <p>
+            To participate, please
+            <a href="mailto:h.yuan@uu.nl?subject=SHREC 6D pose estimation: Registration" target="_blank">
+              send us an email
+            </a> confirming your interest and optionally your affiliation and co-authors.
+          </p>
+
+          <h5>Submission</h5>
+          <p>
+            Submit results before the deadline with a one-page description of your method. Results
+            should be in a .txt file with image names, estimated 6D poses, and estimation speed (ms per pose).
+          </p>
+
+          <h5>Evaluation</h5>
+          <p>
+            We use ADD and ADD-S metrics. Given ground truth rotation R and translation T, and estimated
+            rotation R_e and translation T_e, ADD computes mean distances between 3D points transformed
+            by [R_e|T_e] and [R|T]. ADD-S handles symmetry-invariant pose errors.
+          </p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="six columns">
+          <div class="image-row">
+            <div class="image-column">
+              <img src="image/objects.png" alt="20 object models overview">
+              <p><center>Figure 1: Our dataset covers object models with diverse challenges.</center></p>
+            </div>
+            <div class="image-column">
+              <img src="image/sample.png" alt="Dark6D sample images">
+              <p><center>Figure 2: Samples of Dark6D dataset. Corresponding normal-light image on the left.</center></p>
+            </div>
+          </div>
+
+          <h5>Organizers</h5>
+          <ul>
+            <li>Honglin Yuan <sup>1</sup></li>
+            <li>Yuting Zhang <sup>1</sup></li>
+          </ul>
+          <p>1: Nanjing University of Information Science and Technology, School of Computer Science and School of Software</p>
+
+          <a class="button button-primary"
+             href="mailto:h.yuan@uu.nl?subject=SHREC 6D pose: Question"
+             target="_blank">Contact us</a>
         </div>
       </div>
 
-
+      <!-- Footer -->
       <div class="row">
-        <div class="nine columns">
-          <br>
-        </div>
+        <div class="nine columns">&nbsp;</div>
         <div class="three columns">
           Website last updated: March 22 2020 08:00 (CET)
-        </div>  
+        </div>
       </div>
-
     </section>
-
   </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>
