@@ -4,9 +4,8 @@
   <meta charset="utf-8">
   <title>6D Object Pose Estimation</title>
   <meta name="description" content="challenge: 6D object pose estimation">
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Fonts -->
   <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
@@ -14,39 +13,51 @@
   <style>
     body {
       font-family: 'Raleway', sans-serif;
-      font-size: 18px;  /* 正文字体变大 */
+      font-size: 18px;
       line-height: 1.7;
     }
+
     .content {
       margin-top: 5rem;
       margin-bottom: 5rem;
     }
+
     .logo {
       height: 100px;
       display: block;
       margin: 0 auto 2rem auto;
     }
+
     h2.title {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
     }
+
     h3 {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      font-weight: 600;
       margin-top: 2.5rem;
+      margin-bottom: 1rem;
     }
+
     h5 {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
+      font-weight: 500;
       margin-top: 2rem;
+      margin-bottom: 0.5rem;
     }
+
     p {
       margin-bottom: 1rem;
     }
+
     .button-full {
       width: 100%;
       margin: 1rem 0;
     }
 
-    /* 图片并列布局 */
     .image-row {
       display: flex;
       flex-wrap: wrap;
@@ -54,30 +65,52 @@
       justify-content: center;
       margin: 1rem 0 2rem 0;
     }
+
     .image-column {
-      flex: 1 1 45%;    /* 桌面端约占45% */
-      min-width: 250px;  /* 移动端最小宽度 */
+      flex: 1 1 45%;
+      min-width: 250px;
     }
+
     .image-column img {
       width: 100%;
       height: auto;
-      max-height: 350px; /* 限制图片高度 */
+      max-height: 350px;
       object-fit: contain;
     }
+
     .center-text {
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       margin-top: 0.5rem;
       margin-bottom: 1rem;
     }
+
+    ul {
+      margin-left: 1.5rem;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <section class="content">
+      <!-- Header -->
       <h2 class="title">Robust 6D Object Pose Estimation in Low-Light Environments</h2>
       <img src="image/logo.png" class="logo" alt="Logo">
 
+      <!-- Images -->
+      <div class="image-row">
+        <div class="image-column">
+          <img src="image/objects.png" alt="20 object models overview">
+          <p class="center-text">Figure 1: Our dataset covers object models with diverse challenges.</p>
+        </div>
+        <div class="image-column">
+          <img src="image/sample.png" alt="Dark6D sample images">
+          <p class="center-text">Figure 2: Samples of Dark6D dataset. Corresponding normal-light image on the left.</p>
+        </div>
+      </div>
+
+      <!-- Main Content -->
       <h3>Motivation</h3>
       <p>
         6D object pose estimation is essential for applications such as robotics and augmented reality,
@@ -96,19 +129,7 @@
         Researchers can use these datasets to explore different methods.
       </p>
 
-      <h3>Dataset</h3>
-
-      <div class="image-row">
-        <div class="image-column">
-          <img src="image/objects.png" alt="20 object models overview">
-          <p class="center-text">Figure 1: Our dataset covers object models with diverse challenges.</p>
-        </div>
-        <div class="image-column">
-          <img src="image/sample.png" alt="Dark6D sample images">
-          <p class="center-text">Figure 2: Samples of Dark6D dataset. Corresponding normal-light image on the left.</p>
-        </div>
-      </div>
-
+      <h5>Dataset</h5>
       <p>
         The dataset includes 20 rich and low-texture objects. Images are rendered at $640 \times 480$, 
         resulting in 60k samples, including low-light and normal-light images. Camera positions are uniformly
@@ -147,12 +168,14 @@
         <li>Yuting Zhang <sup>1</sup></li>
       </ul>
       <p>1: Nanjing University of Information Science and Technology, School of Computer Science and School of Software</p>
-
-      <a class="button button-primary button-full"
+      <a class="button button-primary"
          href="mailto:h.yuan@uu.nl?subject=SHREC 6D pose: Question"
          target="_blank">Contact us</a>
 
-      <p class="center-text">Website last updated: March 22 2020 08:00 (CET)</p>
+      <!-- Footer -->
+      <div class="center-text" style="margin-top:3rem;">
+        Website last updated: March 22 2020 08:00 (CET)
+      </div>
     </section>
   </div>
 </body>
